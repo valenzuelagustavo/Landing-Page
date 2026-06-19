@@ -1,0 +1,13 @@
+.arriba {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1F2937;
+}
+
+.header{
+    display: flex;
+    align-items:normal;
+    justify-content:space-between;
+    background-color: #1F2937;
+}
