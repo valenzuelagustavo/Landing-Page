@@ -1,13 +1,230 @@
-.arriba {
+/* Estilos Globales y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Importante para que el padding no sume al tamaño total */
+}
+
+body {
+    /* Usamos Roboto, como se especifica en los estilos */
+    font-family: 'Roboto', sans-serif;
+    
+    /* ¡Aquí empieza la magia de Flexbox! */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1F2937;
+    flex-direction: column; /* Apila los hijos (las secciones) en columna */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el alto de la pantalla */
+}
+
+/* Clases de utilidad para colores que usaremos más adelante */
+.bg-dark {
+    background-color: #1F2937; /* El color oscuro para hero y footer */
+    color: #F9FAF8; /* Texto claro por defecto */
+}
+
+.bg-light-gray {
+    background-color: #E5E7EB; /* Gris claro para el testimonio */
 }
 
 .header{
     display: flex;
-    align-items:normal;
-    justify-content:space-between;
-    background-color: #1F2937;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 80px
+}
+
+.header-logo{
+    font-size: 24px;
+    font-weight: 900;
+    color: #F9FAF8;
+}
+
+.header-nav{
+    display: flex;
+    gap: 20px;
+}
+
+.header-nav a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #E5E7EB;
+}
+
+/* Estilos del Hero */
+.hero {
+    display: flex; /* Activa Flexbox */
+    justify-content: space-between; /* Distribuye el espacio entre los dos bloques */
+    align-items: center; /* Centra verticalmente */
+    
+    padding: 80px 80px; /* Un poco más de padding vertical */
+}
+
+.hero-content {
+    flex: 1; /* Permite que el bloque de texto crezca para ocupar espacio */
+    max-width: 50%; /* Limita el ancho del texto */
+    margin-right: 60px; /* Espacio entre el texto y la imagen */
+}
+
+.hero-main-text {
+    /* Estilos de la imagen de estilos */
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.hero-secondary-text {
+    /* Estilos de la imagen de estilos */
+    font-size: 18px;
+    color: #E5E7EB; /* Color secundario */
+    margin-bottom: 20px; /* Espacio debajo del subtítulo */
+}
+
+/* Estilo general para botones */
+.button {
+    /* Estilos de la imagen de estilos */
+    background-color: #3882F6; /* Color azul para botones */
+    color: white;
+    padding: 8px 30px;
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.hero-placeholder {
+    width: 400px;
+    height: 250px;
+    background-color: #6B7280; /* Color gris oscuro de la imagen */
+    color: white;
+    display: flex; /* Para centrar el texto *dentro* del marcador */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 8px; /* Un pequeño detalle */
+}
+
+/* Estilos de la Sección de Información */
+.information {
+    padding: 80px;
+    text-align: center; /* Centra el título principal */
+}
+
+.information-header {
+    /* Estilos de la imagen de estilos */
+    font-size: 36px;
+    color: #1F2937;
+    font-weight: 900;
+    margin-bottom: 50px; /* Espacio antes de las tarjetas */
+}
+
+.cards-container {
+    display: flex; /* Activa Flexbox para las tarjetas */
+    justify-content: center; /* Centra las tarjetas en el medio */
+    gap: 40px; /* ¡Clave! El espacio entre tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas bajen si no hay espacio */
+}
+
+.card {
+    width: 200px; /* Ancho fijo para cada tarjeta */
+    text-align: center; /* Centra el texto de la tarjeta */
+}
+
+.card-image-box {
+    width: 100%;
+    height: 200px;
+    background-color: white; /* Interior blanco */
+    border: 4px solid #3882F6; /* Borde azul como en la imagen */
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #1F2937; /* Color principal oscuro */
+}
+
+/* Estilos de la Sección de Testimonio */
+.testimonial {
+    padding: 100px 150px; /* Padding generoso */
+}
+
+.testimonial-content {
+    max-width: 800px; /* Limita el ancho del texto */
+    margin: 0 auto; /* Centra el bloque de texto en la pantalla */
+}
+
+.quote-text {
+    /* Estilos de la imagen de estilos */
+    font-size: 36px;
+    font-style: italic; /* Es una cita */
+    font-weight: 300; /* Roboto light */
+    color: #1F2937;
+    margin-bottom: 10px;
+}
+
+.quote-author {
+    /* Estilos de la imagen de estilos */
+    font-size: 24px;
+    font-weight: 900;
+    color: #1F2937;
+    text-align: right; /* Alinea el autor a la derecha */
+}
+
+/* Estilos del CTA */
+.cta-section {
+    padding: 80px;
+}
+
+.cta-box {
+    background-color: #3882F6; /* Color azul de fondo */
+    color: white;
+    padding: 50px 80px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 900px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el recuadro azul en la página */
+    
+    /* ¡Aquí usamos Flexbox! */
+    display: flex;
+    justify-content: space-between; /* Texto a la izquierda, botón a la derecha */
+    align-items: center; /* Centra verticalmente */
+}
+
+.cta-text {
+    flex: 1; /* Permite que el texto ocupe espacio */
+}
+
+.cta-header {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.cta-subtext {
+    font-size: 16px;
+    font-weight: 300; /* Un poco más fino */
+}
+
+.cta-button {
+    /* Usamos la clase general .button, pero con un borde blanco */
+    border: 2px solid white;
+    margin-left: 30px; /* Un poco de separación del texto */
+}
+
+/* Estilos del Footer */
+.footer {
+    padding: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #F9FAF8;
+    margin-top: auto; /* Empuja el footer hacia abajo si el contenido es corto */
+    
+    /* Usamos Flexbox para centrar *perfectamente* */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    size-adjust: 200px 200px;
 }
